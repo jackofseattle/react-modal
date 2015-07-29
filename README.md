@@ -15,7 +15,7 @@ Accessible modal dialog component for React.JS
 </Modal>
 ```
 ## Styles
-Styles are passed as an object with 2 keys, 'overlay' and 'body' like so
+Styles are passed as an object with 2 keys, 'overlay' and 'content' like so
 ```js
 {
   overlay : {
@@ -26,7 +26,7 @@ Styles are passed as an object with 2 keys, 'overlay' and 'body' like so
     bottom            : 0,
     'backgroundColor' : 'rgba(255, 255, 255, 0.75)'
   },
-  body : {
+  content : {
     position                   : 'absolute',
     top                        : '40px',
     left                       : '40px',
