@@ -1,4 +1,4 @@
-# react-modal
+# react-modal-inline-style
 
 Accessible modal dialog component for React.JS
 
@@ -8,8 +8,8 @@ Accessible modal dialog component for React.JS
 <Modal
   isOpen={bool}
   onRequestClose={fn}
-  closeTimeoutMS={n}
->
+  closeTimeoutMS={n}>
+
   <h1>Modal Content</h1>
   <p>Etc.</p>
 </Modal>

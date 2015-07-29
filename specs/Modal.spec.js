@@ -92,13 +92,13 @@ describe('Modal', function () {
 
   it('supports custom className', function() {
     var modal = renderModal({isOpen: true, className: 'myClass'});
-    equal(modal.portal.refs.content.getDOMNode().className.contains('myClass'), true);
+    equal(modal.portal.refs.content.getDOMNode().className.indexOf('myClass') !== -1, true);
     unmountModal();
   });
 
   it('supports overlayClassName', function () {
     var modal = renderModal({isOpen: true, overlayClassName: 'myOverlayClass'});
-    equal(modal.portal.refs.overlay.getDOMNode().className.contains('myOverlayClass'), true);
+    equal(modal.portal.refs.overlay.getDOMNode().className.indexOf('myOverlayClass') !== -1, true);
     unmountModal();
   });
 
@@ -109,13 +109,13 @@ describe('Modal', function () {
 
   it('adds class to body when open', function() {
     var modal = renderModal({isOpen: false});
-    equal(document.body.className.contains('ReactModal__Body--open'), false);
+    equal(document.body.className.indexOf('ReactModal__Body--open') !== -1, false);
 
     modal.setProps({ isOpen: true});
-    equal(document.body.className.contains('ReactModal__Body--open'), true);
+    equal(document.body.className.indexOf('ReactModal__Body--open')  !== -1, true);
 
     modal = renderModal({isOpen: false});
-    equal(document.body.className.contains('ReactModal__Body--open'), false);
+    equal(document.body.className.indexOf('ReactModal__Body--open')  !== -1, false);
     unmountModal();
   });
 
