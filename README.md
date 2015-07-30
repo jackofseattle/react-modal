@@ -1,4 +1,4 @@
-# react-modal-inline-style
+# react-modal
 
 Accessible modal dialog component for React.JS
 
