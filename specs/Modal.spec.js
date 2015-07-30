@@ -107,6 +107,21 @@ describe('Modal', function () {
     equal(modal.portal.refs.content.getDOMNode().style.width, '20px');
   });
 
+  it('supports overridding style on the modal contents', function() {
+    var modal = renderModal({isOpen: true, style: {content: {position: 'static'}}});
+    equal(modal.portal.refs.content.getDOMNode().style.position, 'static');
+  });
+
+  it('supports adding style on the modal overlay', function() {
+    var modal = renderModal({isOpen: true, style: {overlay: {width: '75px'}}});
+    equal(modal.portal.refs.overlay.getDOMNode().style.width, '75px');
+  });
+
+  it('supports overridding style on the modal overlay', function() {
+    var modal = renderModal({isOpen: true, style: {overlay: {position: 'static'}}});
+    equal(modal.portal.refs.overlay.getDOMNode().style.position, 'static');
+  });
+
   it('adds class to body when open', function() {
     var modal = renderModal({isOpen: false});
     equal(document.body.className.indexOf('ReactModal__Body--open') !== -1, false);
