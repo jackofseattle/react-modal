@@ -8,7 +8,8 @@ Accessible modal dialog component for React.JS
 <Modal
   isOpen={bool}
   onRequestClose={fn}
-  closeTimeoutMS={n}>
+  closeTimeoutMS={n}
+  style={customStyle}>
 
   <h1>Modal Content</h1>
   <p>Etc.</p>
@@ -68,6 +69,18 @@ Modal.setAppElement('#your-app-element');
 
 */
 
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
+
+
 var App = React.createClass({
 
   getInitialState: function() {
@@ -89,6 +102,7 @@ var App = React.createClass({
         <Modal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
+          style={customStyles}
         >
           <h2>Hello</h2>
           <button onClick={this.closeModal}>close</button>
